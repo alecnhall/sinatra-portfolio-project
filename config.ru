@@ -1,9 +1,9 @@
 # This file is for how app is loaded up onto server
 
-require './config/environnment'
+require './config/environment'
 
-if ActiveRecord::Migrator.needs_migration?
-    raise 'Migrations are pending. Run `rake db:migrate` to resolve this issue.'
+if ActiveRecord::Base.connection.migration_context.needs_migration?
+  raise 'Migrations are pending. Run `rake db:migrate` to resolve the issue.'
 end
 
 use Rack::MethodOverride # middleware 
