@@ -1,0 +1,30 @@
+<html>
+    <head>
+    <title>Pantry App</title>
+    </head>
+    <body>
+    <% if logged_in? %>
+
+        <h1>Welcome <%= current_user.username %></h1>
+
+        <a href="/pantries/new"> Create New Pantry </a>
+        <br>
+        <a href="/pantries"> View Pantries </a>
+        <br>
+        <a href="/items/new"> Add Items To Pantry </a>
+        <br>
+        <a href="/logout"> Log Out </a>
+
+    <% else %>
+
+        <h1>Welcome to the Pantry App!</h1>                                  
+
+        <p>This app helps you inventory all the items in you pantry. If you want to you can store items based on the nationality of the item. Otherwise you can just name one pantry and store all ingredients in that one pantry.</p>
+
+        <a href="/signup">Sign Up</a>
+        <a href="/login"> Sign In </a>
+
+    <% end %>
+        <%= yield %>
+    </body>
+</html>

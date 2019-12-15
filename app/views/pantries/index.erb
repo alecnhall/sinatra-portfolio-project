@@ -1,0 +1,11 @@
+<br>
+<br>
+<% @pantries.each do |pantry| %>
+  <%= pantry.name %>
+  <br>
+  <%= pantry.nationality %>
+  <br>
+  <a href="/pantries/<%=pantry.id%>/edit">Edit</a>
+  <br>
+  <br>
+<% end %>

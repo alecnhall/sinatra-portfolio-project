@@ -1,0 +1,18 @@
+<h1>Add Items To Pantry</h1>
+
+<form action="/items" method="POST">
+  <label> Item Name </label>
+  <input type="text" name="name"> </br>
+
+  <label> Amount Of Item in Oz </label>
+  <input type="text" name="amount"> </br>
+
+  <label> Which pantry do you want to add this item too? </label>
+  <select name="pantry_id">
+    <% current_user.pantries.each do |pantry| %>
+      <option value=<%=pantry.id%>><%= pantry.name%></option>
+    <% end %> 
+  </select>
+
+  <input type="submit" value="Add Item">
+</form>

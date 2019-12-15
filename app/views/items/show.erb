@@ -1,0 +1,7 @@
+  <br>
+  <%= @item.name %>
+  <br>
+  <%= @item.amount %> 
+  <br>
+  Pantry: <a href="/pantries/<%=@item.pantry.id%>"><%= @item.pantry.name %></a> <br />
+  <a href="/items/<%=@item.id%>/edit">Edit</a>

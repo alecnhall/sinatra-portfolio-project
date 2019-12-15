@@ -1,0 +1,19 @@
+ 
+<h1>Edit <%= @item.name %></h1>
+
+<form action="/items/<%=@item.id %>" method="POST">
+  <label> Item Name </label>
+  <input type="text" name="name" value="<%=@item.name %>"> </br>
+
+  <label> Amount In Oz </label>
+  <input type="text" name="amount" value="<%=@item.amount%>"> </br>
+
+  <label> Which Pantry does this item go in? </label>
+  <select name="pantry_id">
+    <% current_user.pantries.each do |pantry| %>
+      <option value=<%=pantry.id %>><%= pantry.name %></option>
+    <% end %>
+  </select>
+
+  <input type="submit" value="Update">
+</form>

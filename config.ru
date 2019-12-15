@@ -7,7 +7,7 @@ if ActiveRecord::Base.connection.migration_context.needs_migration?
 end
 
 use Rack::MethodOverride # middleware 
-use FoodItemsController
-use PantryController
+use ItemsController
+use PantriesController
 use UsersController
 run ApplicationController

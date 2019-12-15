@@ -65,7 +65,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord
+  activerecord (>= 4.2.7.1)
   bcrypt
   pry
   rake
@@ -73,7 +73,7 @@ DEPENDENCIES
   shotgun
   sinatra
   sinatra-activerecord
-  sqlite3
+  sqlite3 (~> 1.4)
   tux
 
 BUNDLED WITH

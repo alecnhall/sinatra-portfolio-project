@@ -1,0 +1,12 @@
+  <h2><%= @pantry.name %></h2>
+  <br>
+  <%= @pantry.nationality %>
+  <ul>
+  <% @pantry.items.each do |item| %>
+    <li><a href="/items/<%=item.id%>"><%= item.name %></a></li>
+  <% end%>
+  </ul>
+  <a href="/pantries/<%=@pantry.id%>/edit">Edit</a>
+  <br />
+  <br />
+
