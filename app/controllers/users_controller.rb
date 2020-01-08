@@ -14,15 +14,15 @@ class UsersController < ApplicationController
 
     get '/signup' do 
         if !session[:user_id]
-            erb :'users/create'
+            erb :'users/new'
         else
             redirect to '/items'
         end
     end
 
     post '/signup' do
-        if params[:email] == "" || params[:username] == "" || params[:password] == "" 
-            redirect to '/create'
+        if params[:username] == "" || params[:password] == "" 
+            redirect to '/new'
         else
             @user = User.create(username: params[:username], password: params[:password])
             session[:user_id] = @user.id

@@ -33,8 +33,15 @@ class ItemsController < ApplicationController
     end
 
     post '/items' do   
-        Item.create(name: params[:name], amount: params[:amount], pantry_id: params[:pantry_id])
-        redirect '/items'
+        redirect_if_not_logged_in
+        @item = Item.create(name: params[:name], amount: params[:amount], pantry_id: params[:pantry_id])
+        redirect '/pantries/' + @item.pantry_id.to_s 
+    end
+
+    delete '/items/:id/delete' do 
+        @item = Item.find(params[:id])
+        @item.destroy
+        redirect to "/pantries"
     end
     
 end

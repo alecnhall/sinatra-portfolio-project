@@ -1,7 +1,7 @@
 <br>
 <br>
 <% @pantries.each do |pantry| %>
-  <%= pantry.name %>
+  <a href="pantries/<%= pantry.id %>"><%= pantry.name %></a>
   <br>
   <%= pantry.nationality %>
   <br>

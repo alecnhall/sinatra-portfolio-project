@@ -11,7 +11,7 @@
   <select name="pantry_id">
     <% current_user.pantries.each do |pantry| %>
       <option value=<%=pantry.id%>><%= pantry.name%></option>
-    <% end %> 
+    <% end %>  
   </select>
 
   <input type="submit" value="Add Item">

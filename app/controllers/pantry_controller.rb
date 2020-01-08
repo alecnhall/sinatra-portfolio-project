@@ -37,5 +37,11 @@ class PantriesController < ApplicationController
         Pantry.create(name: params[:name], nationality: params[:nationality], user_id: current_user.id)
         redirect '/pantries'
     end
+
+    delete '/pantries/:id/delete' do 
+        @pantry = Pantry.find(params[:id])
+        @pantry.destroy
+        redirect to "/pantries"
+    end
     
 end

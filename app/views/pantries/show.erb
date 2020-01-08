@@ -1,5 +1,4 @@
   <h2><%= @pantry.name %></h2>
-  <br>
   <%= @pantry.nationality %>
   <ul>
   <% @pantry.items.each do |item| %>
@@ -7,6 +6,9 @@
   <% end%>
   </ul>
   <a href="/pantries/<%=@pantry.id%>/edit">Edit</a>
-  <br />
-  <br />
+  <form action="/pantries/<%= @pantry.id %>/delete" method="post">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Pantry">
+  </form>
+  
 
